@@ -8,6 +8,7 @@ using namespace std;
 
 ll helper(ll x,vector<ll> &coin,vector<ll> &dp){
     ll ans=0;
+    ll mod =1e9+7;
     if(x==0){
         return 1;
     }
@@ -21,6 +22,7 @@ ll helper(ll x,vector<ll> &coin,vector<ll> &dp){
                 dp[x-coin[i]]=helper(x-coin[i],coin,dp);
             }
             ans+=dp[x-coin[i]];
+            ans=ans%mod;
             }
 
         }
