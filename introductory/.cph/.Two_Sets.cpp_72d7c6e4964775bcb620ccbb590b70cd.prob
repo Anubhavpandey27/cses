@@ -1,0 +1,1 @@
+{"name":"Local: Two_Sets","url":"c:\\Users\\ASUS\\Documents\\cses\\introductory\\Two_Sets.cpp","tests":[{"id":1725916203752,"input":"7","output":"YES\n4\n1 2 4 7\n3\n3 5 6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ASUS\\Documents\\cses\\introductory\\Two_Sets.cpp","group":"local","local":true}

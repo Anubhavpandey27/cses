@@ -1,0 +1,1 @@
+{"name":"Local: Book_Shop","url":"c:\\Users\\ASUS\\Documents\\cses\\Dynamic_Programming\\Book_Shop.cpp","tests":[{"id":1722641212254,"input":"10 10\n1 2 10 6 5 1 7 4 10 4\n6 3 8 1 7 3 8 6 5 6","output":"21"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ASUS\\Documents\\cses\\Dynamic_Programming\\Book_Shop.cpp","group":"local","local":true}
