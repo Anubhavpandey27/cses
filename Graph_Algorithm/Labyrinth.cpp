@@ -45,56 +45,82 @@ for(int i=0;i<n;i++){
     }
   }
 }
-queue<pair<pair<int,int>,pair<int,vector<char>>>> q;
-pair<pair<int,int>,pair<int,vector<char>>>p;
-p.first.first=a.first;
-p.first.second=a.second;
-p.second.first=0;
+vec[b.first][b.second]='.';
+queue<pair<int,int>> q;
+pair<int,int>p;
+p.first=a.first;
+p.second=a.second;
 
-vec[a.first][a.second]='#';
+
+vec[a.first][a.second]='A';
 vector<char> ans;
+bool test=false;
 q.push(p);
 while(q.size()>0){
 
-  int i=q.front().first.first;
-  int j=q.front().first.second;
+  int i=q.front().first;
+  int j=q.front().second;
   
-  int dis=q.front().second.first;
-  vector<char> s=q.front().second.second;
+  
+ 
   if(i==b.first && j==b.second){
-    ans=s;
+    test=true;
     break;
   }
   q.pop();
-  if(i!=0 && vec[i-1][j]!='#'){
-    vec[i-1][j]='#';
-    s.push_back('U');
-    q.push({{i-1,j},{dis+1,s}});
-    s.pop_back();
+  if(i!=0 && vec[i-1][j]=='.'){
+    vec[i-1][j]='U';
+ 
+    q.push({i-1,j});
+    
   }
-  if(i!=n-1 && vec[i+1][j]!='#'){
-    vec[i+1][j]='#';
-    s.push_back('D');
-    q.push({{i+1,j},{dis+1,s}});
-    s.pop_back();
+  if(i!=n-1 && vec[i+1][j]=='.'){
+    vec[i+1][j]='D';
+    
+    q.push({i+1,j});
+    
   }
-  if(j!=m-1 && vec[i][j+1]!='#'){
-    vec[i][j+1]='#';
-    s.push_back('R');
-    q.push({{i,j+1},{dis+1,s}});
-    s.pop_back();
+  if(j!=m-1 && vec[i][j+1]=='.'){
+    vec[i][j+1]='R';
+    
+    q.push({i,j+1});
+    
   }
-  if(j!=0 && vec[i][j-1]!='#'){
-    vec[i][j-1]='#';
-    s.push_back('L');
-    q.push({{i,j-1},{dis+1,s}});
-    s.pop_back();
+  if(j!=0 && vec[i][j-1]=='.'){
+    vec[i][j-1]='L';
+    
+    q.push({i,j-1});
+   
   }
 }
-if(ans.size()>0){
+if(test){
   cout<<"YES"<<"\n";
+  int x=b.first;
+  int y=b.second;
+  while(vec[x][y]!='A'){
+    if(vec[x][y]=='D'){
+      ans.push_back('D');
+      x--;
+
+    }
+    if(vec[x][y]=='U'){
+      ans.push_back('U');
+      x++;
+    }
+    if(vec[x][y]=='L'){
+      ans.push_back('L');
+      y++;
+    }
+    if(vec[x][y]=='R'){
+      ans.push_back('R');
+      y--;
+    }
+      
+    
+
+  }
   cout<<ans.size()<<"\n";
-  for(int i=0;i<ans.size();i++){
+  for(int i=ans.size()-1;i>=0;i--){
     cout<<ans[i];
   }
 }

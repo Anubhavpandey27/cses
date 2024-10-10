@@ -5,6 +5,7 @@
         "xiosbase": "cpp",
         "xtree": "cpp",
         "iostream": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "deque": "cpp"
     }
 }
